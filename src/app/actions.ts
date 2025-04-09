@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { createSession, deleteSession } from "@/lib/session";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 // Simulação de um banco de dados de usuários
 const testUser = {
@@ -36,8 +37,7 @@ export async function login(prevState: any, formData: FormData) {
   if (email !== testUser.email || password !== testUser.password) {
     return {
       errors: {
-        email: ["Invalid email or password"],
-        password: ["Invalid email or password"],
+        email: ["Invalid email or password"]
       },
     };
   }

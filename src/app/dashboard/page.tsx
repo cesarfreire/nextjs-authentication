@@ -1,12 +1,9 @@
-"use client";
+import { DashboardComponent } from "@/components/dashboard-component";
 
-import { logout } from "@/app/actions";
-
-export default function Dashboard() {
+export default async function Dashboard() {
   return (
     <div>
-      <h1>Dashboard</h1>
-      <button onClick={() => logout()}>Logout</button>
+      <DashboardComponent />
     </div>
   );
 }
